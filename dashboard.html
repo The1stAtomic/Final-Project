@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Dashboard</title>
+</head>
+
+</html>
+
+<body>
+  <div class="dashboard"> <!--Dashboard-->
+    <main> <!--Header-->
+      <div class="search">
+        <form action="#">
+          <input type="text" name="search" id="search" placeholder="Search...">
+          <ion-icon name="search"></ion-icon>
+        </form>
+      </div>
+
+      <div class="title">
+        <h1>My project</h1>
+        <form action="#">
+          <label for="projects">Sort By</label>
+          <select name="projects" id="projects">
+            <option value="recent">Recent Project</option>
+            <option value="finished">Finished Project</option>
+            <option value="ongoing">Ongoing Project</option>
+            <option value="stalled">Stalled Project</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="project-list"> <!--Project list-->
+        <div class="project"> <!--Project1-->
+          <div class="category category_color1"></div>
+          <h2>Graphic Design</h2>
+          <p>Active recently</p>
+
+          <ul class="activity">
+            <li>Coming soon banner</li>
+            <li>Book cover</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project1 end-->
+
+        <div class="project"> <!--Project2-->
+          <div class="category category_color2"></div>
+          <h2>Magazine</h2>
+          <p>1 hour ago</p>
+
+          <ul class="activity">
+            <li>Editorial page content</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project2 end-->
+
+        <div class="project"> <!--Project3-->
+          <div class="category category_color3"></div>
+          <h2>Layouting</h2>
+          <p>1 day ago</p>
+
+          <ul class="activity">
+            <li>Fix layout on page ads</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project3 end-->
+
+        <div class="project"> <!--Project4-->
+          <div class="category category_color4"></div>
+          <h2>Branding</h2>
+          <p>3 day ago</p>
+
+          <ul class="activity">
+            <li>Brainstorming shapes</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project4 end-->
+
+        <div class="project"> <!--Project5-->
+          <div class="category category_color2"></div>
+          <h2>Guidelines</h2>
+          <p>5 day ago</p>
+
+          <ul class="activity">
+            <li>Make brand guideline for marked cosmetics</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project5 end-->
+
+        <div class="project"> <!--Project6-->
+          <div class="category category_color3"></div>
+          <h2>Photoshoot</h2>
+          <p>1 week ago</p>
+
+          <ul class="activity">
+            <li>Get the photo ready for magazine</li>
+          </ul>
+
+          <div class="meta">
+            <ion-icon name="ellipsis-vertical"></ion-icon>
+          </div>
+        </div> <!--Project6 end-->
+      </div> <!--Project list end-->
+    </main>
+
+    <section class="secondary"> <!--Secondary-->
+      <div class="chart">
+        <h2>Total Projects</h2>
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+        <div class="complete">
+          <h3>3 Completed</h3>
+          <p>From 5 projects</p>
+        </div>
+      </div>
+
+      <div class="recent-project"> <!--Recent project-->
+        <div class="listing">
+          <div class="title">
+            <div class="category category_color1"></div>
+            <h2>Layouting</h2>
+            <p>By Vatana Sethymuny</p>
+          </div>
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </div>
+
+        <div class="listing">
+          <div class="title">
+            <div class="category category_color2"></div>
+            <h2>Photoshoot</h2>
+            <p>By Peter Parker</p>
+          </div>
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </div>
+
+        <div class="listing">
+          <div class="title">
+            <div class="category category_color3"></div>
+            <h2>Branding</h2>
+            <p>By Ryan Reynold</p>
+          </div>
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </div>
+
+        <div class="listing">
+          <div class="title">
+            <div class="category category_color4"></div>
+            <h2>Graphic Design</h2>
+            <p>By Jinx</p>
+          </div>
+          <ion-icon name="ellipsis-vertical"></ion-icon>
+        </div>
+      </div> <!--Recent project End-->
+    </section>
+  </div> <!--Dashboard End-->
+
+  <script src="dashboard.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: [
+          'Completed',
+          'Ongoing',
+          'Stalled'
+        ],
+        datasets: [{
+          label: 'My First Dataset',
+          data: [300, 50, 100],
+          backgroundColor: [
+            'rgb(255, 99, 132)',
+            'rgb(54, 162, 235)',
+            'rgb(255, 205, 86)'
+          ],
+          hoverOffset: 4
+        }]
+      }
+    });
+  </script>
+</body>
